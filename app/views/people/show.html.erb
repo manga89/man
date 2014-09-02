@@ -1,0 +1,58 @@
+
+<%=link_to("<< Back to List", {:action => 'index'}, :class =>'back-link')%>
+<div class ="subjects show">
+	<h2><%=@people.first_name%> <%=@people.last_name%> Profile </h2>
+
+	<table summary="Subject detail view">
+		<tr>
+			<th>First Name</th>
+			<td><%=@people.first_name%></td>
+		</tr>
+		<tr>
+			<th>Last Name</th>
+			<td><%=@people.last_name %></td>
+		</tr>
+
+		<tr>
+			<th>Sex</th>
+			<td><%=@people.sex %></td>
+		</tr>
+		<tr>
+			<th>Age</th>
+			<td><%=@people.age %></td>
+		</tr>
+		<tr>
+			<th>State</th>
+			<td><%=@people.state %></td>
+		</tr>
+
+		<tr>
+			<th>Hobby</th>
+			<td><%=@people.hobbies %></td>
+		</tr>
+
+		<tr>
+			<th>Address</th>
+			<td><%=@people.address %></td>
+		</tr>
+		<tr>
+			<th>Profession</th>
+			<td><%=@people.profession%></td>
+		</tr>
+
+		<tr>
+			<th>Visible?</th>
+			<td><%=@people.visible ? 'true' : 'false' %></td></tr>
+			<tr>
+
+
+
+				<th>Created</th>
+				<td><%=@people.created_at %></td>
+			</tr>
+			<tr>
+				<th>Updated</th>
+				<th><%=@people.updated_at %></td>
+				</tr>
+			</table>
+		</div>

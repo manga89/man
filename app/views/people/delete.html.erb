@@ -1,0 +1,17 @@
+<%=link_to("<< Back to List", {:action => 'index'}, :class =>'back-link')%>
+<div class ="subjects new">
+	<h2>Remove <%=@people.first_name%> Profile</h2>
+<%= form_for(:people, :url=> {:action =>'destroy', :id=>@people.id}) do |f| %>
+
+<p> Are You sure you want to delete <%=@people.first_name%>
+
+<div class ="form-buttons">
+	<%=submit_tag("Delete")%>
+</div>
+
+<% end %>
+
+
+
+
+</div>

@@ -1,0 +1,42 @@
+
+<% if !flash[:notice].blank? %>
+<div class ="notice"><%= flash[:notice]%>
+
+</div>
+	<%end%>
+
+<%=link_to("<< Back to List", {:action => 'index'}, :class =>'back-link')%>
+<div class ="subjects new">
+	<h2>Create New Subject</h2>
+<%= form_for(:subject, :url=> {:action =>'update', :id=>@subject.id}) do |f| %>
+
+<table summary ="Subject form fields">
+
+<tr>
+	<th>Name</th>
+	<th><%=f.text_field(:name)%>
+	</th>
+	</tr>
+
+<tr>
+	<th>Posision</th>
+	<th><%=f.text_field(:position)%>
+	</th>
+	</tr>
+
+<tr>
+	<th>Visible</th>
+	<th><%=f.text_field(:visible)%>
+	</th>
+	</tr>
+</table>
+<div class ="form-buttons">
+	<%=submit_tag("Update")%>
+</div>
+
+<% end %>
+
+
+
+
+</div>

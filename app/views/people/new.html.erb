@@ -1,0 +1,66 @@
+<%=link_to("<< Back to List", {:action => 'index'}, :class =>'back-link')%>
+<div class ="subjects new">
+	<h2>Create New Person's List</h2>
+<%= form_for(:people, :url=> {:action =>'create'}) do |f| %>
+
+<table summary ="Subject form fields">
+
+<tr>
+	<th>First Name</th>
+	<th><%=f.text_field(:first_name)%>
+	</th>
+	</tr>
+
+<tr>
+	<th>Last Name</th>
+	<th><%=f.text_field(:last_name)%>
+	</th>
+	</tr>
+
+<tr>
+	<th>Sex</th>
+	<th><%=f.text_field(:sex)%>
+	</th>
+
+
+	<tr>
+	<th>State</th>
+	<th><%=f.text_field(:state)%>
+	</th>
+
+
+	<tr>
+	<th>Visible</th>
+	<th><%=f.text_field(:visible)%>
+	</th>
+
+	<tr>
+	<th>Age</th>
+	<th><%=f.text_field(:age)%>
+	</th>
+
+	<tr>
+	<th>Address</th>
+	<th><%=f.text_field(:address)%>
+	</th>
+
+	<tr>
+	<th>Hobby</th>
+	<th><%=f.text_field(:hobbies)%>
+	</th>
+	<tr>
+	<th>Profession</th>
+	<th><%=f.text_field(:profession)%>
+	</th>
+	</tr>
+</table>
+<div class ="form-buttons">
+	<%=submit_tag("Create")%>
+</div>
+
+<% end %>
+
+
+
+
+</div>

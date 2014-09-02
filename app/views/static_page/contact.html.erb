@@ -1,0 +1,42 @@
+<h1>Contact us</h1>
+
+<%=@error_msg %></br>
+Your name is <%= @name%> and your email address is <%= @email%>
+<%= form_for contact_path method: "POST" do %>
+<table>
+
+	<tr>
+
+<td><%=label_tag :name , "Full Name:" %></td>
+<td>
+<%= text_field_tag :name, @name, autofocus: "autofocus", placeholder: "Enter your name"%><br/><td></tr>
+
+<tr><td>
+<%=label_tag :email , "Email Address:" %></td><td>
+<%= email_field_tag :email, @email, placeholder: "something@domain.com" %><br/></td></tr>
+<tr><td>
+<%=label_tag :textarea, "What happened?"%><br/></td><td>
+<%=text_area_tag :textarea, @textarea, placeholder: "Type watin happen", size: "50x20" %></br></td></tr>
+
+<tr><td>
+<%=label_tag :newsletter, "Subscribe" %><br/></td><td>
+<%=check_box_tag :newsletter, @newsletter %></br></td></tr>
+
+
+<tr><td>
+<%=label_tag :gender, "Male" %><br/></td><td>
+<%=radio_button_tag :gender, @male %></br></td></tr>
+
+<tr><td>
+<%=label_tag :gender, "Female" %><br/></td><td>
+<%=radio_button_tag :gender, @female %></br></td></tr>
+
+
+
+
+
+</table>
+<%=select_tag :color, options_for_select([['red',1],['green',2], ['blue',3]]) %><br/>
+<%= submit_tag "Ask us something"%>
+
+<% end %>

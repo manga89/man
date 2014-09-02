@@ -1,0 +1,34 @@
+<% if !flash[:notice].blank? %>
+<div class ="notice"><%= flash[:notice]%>
+
+</div>
+	<%end%>
+
+
+<div class = "subjects index">
+	<h2>List of Registered Persons</h2>
+
+<%= link_to("Add New Persons", {:action => 'new'}, :class=>'action new')%>
+<table class="menu1" summary="People list">
+	<tr class = "header">
+		<th>&nbsp;</th>
+		<th class="menu2">First Name</th>
+		<th class="menu2">Last Name</th>
+		<th class="menu2"> Sex</th>
+		<th class="menu2">State</th>
+	</tr>
+	<% @people.each do |people| %>
+	<tr>
+		<td><%= people.first_name %><td>
+		<td><%= people.last_name %></td>
+		<td class="center"><%= people.sex %></td>
+		<td class="center"><%= people.state %></td>   
+		<td class="actions">
+		<%= link_to("show", {:action=> 'show', :id=>people.id}, :class =>'action show') %>
+		<%= link_to("edit", {:action => 'edit', :id =>people.id}, :class =>'action edit') %>
+		<%= link_to("delete", {:action => 'delete', :id => people.id}, :class =>'action delete') %>
+	</td>
+</tr>
+<% end %>
+</table>
+</div>
